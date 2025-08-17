@@ -10,7 +10,7 @@ PADDLE_SPEED = 10
 COUNTDOWN_START = 3
 
 class GameServer:
-    def init(self, host='localhost', port=8080):
+    def __init__(self, host='localhost', port=8080):
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server.bind((host, port))
         self.server.listen(2)
@@ -145,3 +145,4 @@ class GameServer:
                     pass
                 self.clients[pid] = None
                 self.connected[pid] = False
+GameServer().run()
